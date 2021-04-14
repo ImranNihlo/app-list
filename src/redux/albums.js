@@ -1,11 +1,8 @@
 const initialState = {
-    filter: "",
     selectedUserId: null,
     albums: [],
-    photos: [],
 
     loadingAlbums: false,
-    loadingPhotos: false
 }
 
 export default (state = initialState, action) => {
@@ -27,19 +24,6 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 selectedUserId: action.payload
-            }
-
-        case "load/photos/start":
-            return {
-                ...state,
-                loadingPhotos: true
-            }
-
-        case "load/photos/success":
-            return {
-                ...state,
-                photos: action.payload,
-                loadingPhotos: false
             }
 
         default:

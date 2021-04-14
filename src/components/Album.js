@@ -1,8 +1,10 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {selectAlbum} from "../redux/actions";
 
 function Album(props) {
+    const selectedUserId = useSelector(state => state.albums.selectedUserId)
+
     const dispatch = useDispatch();
 
     const handleSelectAlbum = () => {
@@ -10,7 +12,9 @@ function Album(props) {
     }
 
     return (
-        <li onClick={handleSelectAlbum}>
+        <li
+            className={(selectedUserId === props.album.userId) ? "selected" : "li"}
+            onClick={handleSelectAlbum}>
             <a href="#">
                 {props.album.title}
             </a>
