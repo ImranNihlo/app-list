@@ -1,5 +1,5 @@
 const initialState = {
-    selectedUserId: null,
+    selectedAlbumId: null,
     albums: [],
 
     loadingAlbums: false,
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
         case "select/albums":
             return {
                 ...state,
-                selectedUserId: action.payload
+                selectedAlbumId: action.payload
             }
 
         default:

@@ -4,16 +4,16 @@ import {useSelector} from "react-redux";
 
 function Photos(props) {
     const photos = useSelector(state => state.photos.photos)
-    const selectedUserId = useSelector(state => state.albums.selectedUserId)
+    const selectedAlbumId = useSelector(state => state.albums.selectedAlbumId)
 
     const filtered = photos.filter(photo => {
-        if (photo.albumId === selectedUserId) {
+        if (photo.albumId === selectedAlbumId) {
             return true;
         }
         return false;
     })
 
-    if (selectedUserId === null) {
+    if (selectedAlbumId === null) {
         return (
             <div className="no-user-selected">
                 <i className="fa fa-long-arrow-left" aria-hidden="true">  Выбери альбом из списка слева</i>
