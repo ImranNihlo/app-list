@@ -1,19 +1,21 @@
 import React from 'react';
 import Photo from "./Photo";
 import {useSelector} from "react-redux";
+import { useParams } from "react-router-dom"
 
 function Photos(props) {
     const photos = useSelector(state => state.photos.photos)
-    const selectedAlbumId = useSelector(state => state.albums.selectedAlbumId)
+
+    const id = parseInt(useParams().id);
 
     const filtered = photos.filter(photo => {
-        if (photo.albumId === selectedAlbumId) {
+        if (photo.albumId === id) {
             return true;
         }
         return false;
     })
 
-    if (selectedAlbumId === null) {
+    if (!id) {
         return (
             <div className="no-user-selected">
                 <i className="fa fa-long-arrow-left" aria-hidden="true">  Выбери альбом из списка слева</i>

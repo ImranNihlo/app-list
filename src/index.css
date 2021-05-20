@@ -38,6 +38,7 @@ ul li {
 
 a {
   text-decoration: none;
+  color: cadetblue;
 }
 
 .main-photos {
@@ -67,6 +68,4 @@ a {
   margin-left: 300px;
   font-size: 26px;
   color: darkcyan;
-
-
 }

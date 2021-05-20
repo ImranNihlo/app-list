@@ -28,9 +28,3 @@ export const loadPhotos = () => {
     }
 }
 
-export const selectAlbum = (userId) => {
-    return {
-        type: "select/albums",
-        payload: userId
-    }
-}
